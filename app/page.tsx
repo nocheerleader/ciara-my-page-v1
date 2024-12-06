@@ -52,7 +52,7 @@ export default function Page() {
             lineHeight: '1.5' 
           }}>
             <p>
-            I’m an AI optimist. I believe in using AI for good. I've been prompting with AI for 3+ years. I'm a neurodiverse autodidactic polymath. Spent 10+ years in finance and business strategy. I'm Irish. I've lived in Bangkok, Sydney and Osaka and now reside in Wales. I once got chased by a Komodo dragon. I've 8 years of product experience at a tech start-up. And now I'm teaching non-tech folks how to build cool stuff as an AI-native development instructor.
+              I&#39;m an AI optimist. I believe in using AI for good. I&#39;ve been prompting with AI for 3+ years. I&#39;m a neurodiverse autodidactic polymath. Spent 10+ years in finance and business strategy. I&#39;m Irish. I&#39;ve lived in Bangkok, Sydney and Osaka and now reside in Wales. I once got chased by a Komodo dragon. I&#39;ve 8 years of product experience at a tech start-up. And now I&#39;m teaching non-tech folks how to build cool stuff as an AI-native development instructor.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function Page() {
             lineHeight: '1.5' 
           }}>
             <p>
-               I’m passionate about making AI accessible. Especially for non-technical beginners. I’ve pivoted from a decade-long career in accounting to building and teaching the next wave of tools like v0 and Cursor.
+              I&#39;m passionate about making AI accessible. Especially for non-technical beginners. I&#39;ve pivoted from a decade-long career in accounting to building and teaching the next wave of tools like v0 and Cursor.
             </p>
             <a 
               href="https://x.com/nocheerleader" 
