@@ -22,7 +22,7 @@ export default function Page() {
         alignItems: 'flex-start' 
       }}>
         <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>🛸</div>
-        <nav style={{ fontSize: '1rem' }}>welcome</nav>
+        <nav style={{ fontSize: '1rem', color: '#ffbc42' }}>welcome</nav>
       </header>
 
       <main style={{ marginTop: '4rem', position: 'relative' }}>
@@ -52,7 +52,7 @@ export default function Page() {
             lineHeight: '1.5' 
           }}>
             <p>
-            I’m an AI optimist. I believe in using AI for good. I've been prompting with AI for 3+ years. I'm an autodidactic polymath. Spent 10+ years in finance and business strategy. I'm Irish. I've lived in Bangkok, Sydney and Osaka and now reside in Wales. I once got chased by a Komodo dragon. I've 8 years of product experience at a tech start-up. And now I'm teaching non-tech folks how to build cool stuff as an AI-native development instructor.
+            I’m an AI optimist. I believe in using AI for good. I've been prompting with AI for 3+ years. I'm a neurodiverse autodidactic polymath. Spent 10+ years in finance and business strategy. I'm Irish. I've lived in Bangkok, Sydney and Osaka and now reside in Wales. I once got chased by a Komodo dragon. I've 8 years of product experience at a tech start-up. And now I'm teaching non-tech folks how to build cool stuff as an AI-native development instructor.
             </p>
           </div>
 
@@ -63,24 +63,28 @@ export default function Page() {
             lineHeight: '1.5' 
           }}>
             <p>
-              GIRL was founded by Roz Stoughton, one half of renowned former design 
-              studio, Passport, with the goal of pushing back against preconceptions; 
-              of subverting the expected; of doing things differently. We're the new 
-              kid on the block with the benefit of over a decade of award-winning 
-              experience.
+               I’m passionate about making AI accessible. Especially for non-technical beginners. I’ve pivoted from a decade-long career in accounting to building and teaching the next wave of tools like v0 and Cursor.
             </p>
-            <button style={{ 
-              marginTop: '1rem', 
-              background: '#fff', 
-              color: '#000', 
-              border: 'none', 
-              padding: '0.75rem 1.5rem', 
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontSize: '0.9rem'
-            }}>
-              View our services
-            </button>
+            <a 
+              href="https://x.com/nocheerleader" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ textDecoration: 'none' }}
+            >
+              <button style={{ 
+                marginTop: '1rem', 
+                background: '#ffbc42', 
+                color: '#000', 
+                border: 'none', 
+                padding: '0.75rem 1.5rem', 
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                fontSize: '0.9rem',
+                borderRadius: '4px',
+              }}>
+                FIND ME HERE
+              </button>
+            </a>
           </div>
         </div>
       </main>
