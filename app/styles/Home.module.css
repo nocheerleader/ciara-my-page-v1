@@ -1,0 +1,77 @@
+.container {
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .mainTitle {
+    font-size: 20vw;
+    font-weight: bold;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    opacity: 1;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .columns {
+    display: flex;
+    gap: 8rem;
+    margin-top: 2rem;
+  }
+  
+  .leftColumn {
+    width: 60%;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  
+  .rightColumn {
+    width: 25%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .button {
+    margin-top: 1rem;
+    background: #ffbc42;
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .mainTitle {
+      font-size: clamp(3rem, 15vw, 20rem);
+      white-space: normal;
+    }
+  
+    .columns {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .leftColumn,
+    .rightColumn {
+      width: 100%;
+    }
+  
+    .button {
+      width: 100%;
+    }
+  }
