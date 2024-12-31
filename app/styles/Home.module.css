@@ -78,24 +78,43 @@
     letter-spacing: 0.02em;    /* Adds space between letters - positive values increase spacing */
   }
   
+  .nav {
+    display: flex;
+    gap: 2rem;          /* Space between nav items */
+    align-items: center;
+  }
+  
+  .navLink {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;    /* Smooth color transition for hover */
+  }
+  
+  .navLink:hover {
+    color: #ffbc42;    /* Same color as your welcome text */
+  }
+  
   @media (max-width: 768px) {
     .container {
       padding: 1rem;
+      overflow-x: hidden;    /* Prevent horizontal scrolling */
     }
   
     .mainTitle {
       font-size: clamp(3rem, 15vw, 20rem);
-      white-space: normal;
+      white-space: normal;    /* Allow text to wrap */
     }
   
     .columns {
-      flex-direction: column;
+      flex-direction: column;    /* Stack columns vertically */
       gap: 2rem;
+      width: 100%;              /* Ensure full width */
     }
   
     .leftColumn,
     .rightColumn {
-      width: 100%;
+      width: 100%;             /* Full width on mobile */
     }
   
     .button {
@@ -113,5 +132,11 @@
         font-size: clamp(1.5rem, 4vw, 3rem);
         margin-top: 1rem;
         line-height: 1.2;
+        white-space: normal;    /* Allow text to wrap */
+    }
+  
+    .nav {
+        gap: 1rem;               /* Reduce space between nav items */
+        flex-wrap: wrap;         /* Allow nav items to wrap if needed */
     }
   }

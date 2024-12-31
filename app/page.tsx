@@ -13,7 +13,12 @@ export default function Page() {
     <div className={styles.container} style={{ fontFamily: spaceGrotesk.style.fontFamily }}>
       <header className={styles.header}>
         <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>🛸</div>
-        <nav style={{ fontSize: '1rem', color: '#ffbc42' }}>welcome</nav>
+        <nav className={styles.nav}>
+          <a href="#" className={styles.navLink}>link 1</a>
+          <a href="#" className={styles.navLink}>link 2</a>
+          <a href="#" className={styles.navLink}>link 3</a>
+          <span style={{ color: '#ffbc42' }}>welcome</span>
+        </nav>
       </header>
 
       <main style={{ marginTop: '0.5rem', position: 'relative' }}>
