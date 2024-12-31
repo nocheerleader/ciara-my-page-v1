@@ -38,7 +38,7 @@
   .columns {
     display: flex;
     gap: 8rem;
-    margin-top: 2rem;
+    margin-top: 12rem;
   }
   
   .leftColumn {

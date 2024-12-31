@@ -2,7 +2,7 @@
 
 import { Space_Grotesk } from 'next/font/google';
 import styles from './styles/Home.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Initialize the font
 const spaceGrotesk = Space_Grotesk({ 
@@ -13,13 +13,26 @@ const spaceGrotesk = Space_Grotesk({
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const mobileNavRef = useRef(null);
 
-  // Add this useEffect to handle client-side mounting
+  // Handle mounting
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // Don't render navigation until component is mounted
+  // Add a cleanup effect for the mobile nav
+  useEffect(() => {
+    return () => {
+      // Cleanup code here if needed
+      setIsMenuOpen(false);
+    };
+  }, []);
+
+  // Handle menu toggle safely
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
+
   if (!isMounted) {
     return null;
   }
@@ -40,7 +53,7 @@ export default function Page() {
         {/* Hamburger Button */}
         <button 
           className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           <span></span>
@@ -49,7 +62,10 @@ export default function Page() {
         </button>
 
         {/* Mobile Navigation */}
-        <div className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}>
+        <div 
+          ref={mobileNavRef}
+          className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}
+        >
           <a href="#" className={styles.navLink}>work</a>
           <a href="#" className={styles.navLink}>about</a>
           <a href="#" className={styles.navLink}>contact</a>
@@ -73,7 +89,7 @@ export default function Page() {
 
           <div className={styles.rightColumn}>
             <p>
-              I&#39;m passionate about making AI accessible to everyone. Especially for non-technical beginners. 
+              I&#39;m passionate about making AI accessible to everyone. Especially non-technical beginners. 
             </p>
             <p style={{ marginTop: '1.5rem' }}>
              v0 and Cursor beginners course coming January 2025 
