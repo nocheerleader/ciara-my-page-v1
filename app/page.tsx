@@ -1,27 +1,63 @@
-// app/page.tsx (Next.js 13+)
+"use client"
+
 import { Space_Grotesk } from 'next/font/google';
 import styles from './styles/Home.module.css';
+import { useState, useEffect } from 'react';
 
 // Initialize the font
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ['latin'],
-  weight: ['300', '400', '500', '700'] // You can adjust these weights based on your needs
+  weight: ['300', '400', '500', '700']
 });
 
 export default function Page() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Add this useEffect to handle client-side mounting
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Don't render navigation until component is mounted
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div className={styles.container} style={{ fontFamily: spaceGrotesk.style.fontFamily }}>
       <header className={styles.header}>
-        <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>🛸</div>
-        <nav className={styles.nav}>
-          <a href="#" className={styles.navLink}>link 1</a>
-          <a href="#" className={styles.navLink}>link 2</a>
-          <a href="#" className={styles.navLink}>link 3</a>
+        <div style={{ fontSize: '1.75rem' }}>🛸</div>
+        
+        {/* Desktop Navigation */}
+        <div className={styles.desktopNav}>
+          <a href="#" className={styles.navLink}>work</a>
+          <a href="#" className={styles.navLink}>about</a>
+          <a href="#" className={styles.navLink}>contact</a>
           <span style={{ color: '#ffbc42' }}>welcome</span>
-        </nav>
+        </div>
+
+        {/* Hamburger Button */}
+        <button 
+          className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Mobile Navigation */}
+        <div className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}>
+          <a href="#" className={styles.navLink}>work</a>
+          <a href="#" className={styles.navLink}>about</a>
+          <a href="#" className={styles.navLink}>contact</a>
+          <span style={{ color: '#ffbc42' }}>welcome</span>
+        </div>
       </header>
 
-      <main style={{ marginTop: '0.5rem', position: 'relative' }}>
+      <main style={{ marginTop: '0', position: 'relative' }}>
         <div className={styles.titleContainer}>
           <div className={styles.mainTitle}>BUILD &amp; <br />DEPLOY</div>
           <div className={styles.subHeading}>with AI</div>
