@@ -17,7 +17,7 @@ export default function Page() {
       </header>
 
       <main style={{ marginTop: '4rem', position: 'relative' }}>
-        <div className={styles.mainTitle}>CiARA</div>
+        <div className={styles.mainTitle}>BUILD & <br />DEPLOY</div>
         
         <div className={styles.columns}>
           <div className={styles.leftColumn}>
