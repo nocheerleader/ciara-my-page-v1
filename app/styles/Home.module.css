@@ -11,14 +11,20 @@
     align-items: flex-start;
   }
   
+  .titleContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
   .mainTitle {
-    font-size: 20vw;
-    font-weight: bold;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-    opacity: 1;
-    white-space: nowrap;
-    overflow: hidden;
+    font-size: 20vw;          /* Makes text size 20% of the viewport width - responsive! */
+    font-weight: bold;        /* Makes the text bold */
+    line-height: 0.9;         /* Sets the space between lines to 90% of the font size */
+    letter-spacing: -0.05em;  /* Brings letters slightly closer together */
+    opacity: 1;              /* Makes text fully visible (1 = 100% visible) */
+    white-space: nowrap;     /* Prevents text from wrapping to next line (except for <br> tags) */
+    overflow: hidden;        /* Hides any text that goes beyond its container */
   }
   
   .columns {
@@ -51,6 +57,27 @@
     border-radius: 4px;
   }
   
+  .subHeading {
+    font-size: 4.5rem;
+    line-height: 1;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 75%;
+    margin-top: 0;
+    transform: translateX(-50%);
+  }
+
+  .subHeading2 {
+    font-size: 3rem;          /* Sets font size to 4rem as requested */
+    line-height: 1;           /* Keeps line height proportional */
+    margin-top: 0.5rem;        /* Pulls it closer to the main title */
+    font-weight: 400;         /* Makes it slightly less bold than the main title */
+    color: #8d8d8e;              /* Matches your white text color */
+    letter-spacing: 0.02em;    /* Adds space between letters - positive values increase spacing */
+  }
+  
   @media (max-width: 768px) {
     .container {
       padding: 1rem;
@@ -73,5 +100,18 @@
   
     .button {
       width: 100%;
+    }
+  
+    .subHeading {
+        font-size: clamp(2rem, 5vw, 4rem);
+        left: 70%;
+        bottom: 0;
+        line-height: 1;
+    }
+  
+    .subHeading2 {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        margin-top: 1rem;
+        line-height: 1.2;
     }
   }

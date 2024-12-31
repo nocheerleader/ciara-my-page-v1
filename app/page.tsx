@@ -16,8 +16,12 @@ export default function Page() {
         <nav style={{ fontSize: '1rem', color: '#ffbc42' }}>welcome</nav>
       </header>
 
-      <main style={{ marginTop: '4rem', position: 'relative' }}>
-        <div className={styles.mainTitle}>BUILD & <br />DEPLOY</div>
+      <main style={{ marginTop: '0.5rem', position: 'relative' }}>
+        <div className={styles.titleContainer}>
+          <div className={styles.mainTitle}>BUILD &amp; <br />DEPLOY</div>
+          <div className={styles.subHeading}>with AI</div>
+        </div>
+        <div className={styles.subHeading2}>a zero to launch framework for non-technical beginners</div>
         
         <div className={styles.columns}>
           <div className={styles.leftColumn}>
