@@ -3,6 +3,7 @@
 import { Space_Grotesk } from 'next/font/google';
 import styles from './styles/Home.module.css';
 import { useState, useEffect, useRef } from 'react';
+import { Button } from "@/components/ui/moving-border";
 
 // Initialize the font
 const spaceGrotesk = Space_Grotesk({ 
@@ -97,22 +98,21 @@ export default function Page() {
           </div>
 
           <div className={styles.rightColumn}>
+          <h2 className={styles.sectionHeading}>I 💛 AI</h2>
             <p>
               I&#39;m passionate about making AI accessible to everyone. 
             </p>
-            <p style={{ marginTop: '0.5 rem' }}>
-             Build and deploy framework coming soon. 
+            <p style={{ marginTop: '1rem', marginBottom: '1rem' }}>
+             BUILD and DEPLOY with AI framework coming soon ☄️
             </p>
-            <a 
-              href="https://x.com/nocheerleader" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              style={{ textDecoration: 'none' }}
+            <Button
+              borderRadius="0.5rem"
+              className="bg-[#ffbc42] text-black h-14"
+              borderClassName="bg-[radial-gradient(#ff00c8_40%,transparent_60%)]"
+              onClick={() => window.open('https://x.com/nocheerleader', '_blank')}
             >
-              <button className={styles.button}>
-                FIND ME HERE
-              </button>
-            </a>
+              FIND ME HERE
+            </Button>
           </div>
         </div>
       </main>
