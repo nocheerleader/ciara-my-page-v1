@@ -4,6 +4,7 @@ import { Space_Grotesk } from 'next/font/google';
 import styles from './styles/Home.module.css';
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/moving-border";
+import { Feature } from "@/components/ui/feature-section-with-bento-grid";
 
 // Initialize the font
 const spaceGrotesk = Space_Grotesk({ 
@@ -41,7 +42,7 @@ export default function Page() {
   }
 
   return (
-    <div className={styles.container} style={{ fontFamily: spaceGrotesk.style.fontFamily }}>
+    <div className={`${styles.container} dark:bg-black dark:text-white`} style={{ fontFamily: spaceGrotesk.style.fontFamily }}>
       <header className={styles.header}>
         <div style={{ fontSize: '1.75rem' }}>🛸</div>
         
@@ -49,7 +50,7 @@ export default function Page() {
         <div className={styles.desktopNav}>
           <a href="#" className={styles.navLink}>prompting</a>
           <a href="#" className={styles.navLink}>framework</a>
-          <a href="#" className={styles.navLink}>about</a>
+          <a href="#" className={styles.navLink}>about ciara</a>
           <span style={{ color: '#ffbc42' }}>welcome</span>
         </div>
 
@@ -85,6 +86,10 @@ export default function Page() {
         </div>
         <div className={styles.subHeading2}>a zero to launch framework for non-technical beginners</div>
         
+        <div className="w-full bg-background dark:bg-background">
+          <Feature />
+        </div>
+
         <div className={styles.columns}>
           <div className={styles.leftColumn}>
             <h2 className={styles.sectionHeading}>About Me</h2>
@@ -107,7 +112,7 @@ export default function Page() {
             </p>
             <Button
               borderRadius="0.5rem"
-              className="bg-[#ffbc42] text-black h-14"
+              className="bg-[#ffbc42] text-black h-14 font-bold"
               borderClassName="bg-[radial-gradient(#ff00c8_40%,transparent_60%)]"
               onClick={() => window.open('https://x.com/nocheerleader', '_blank')}
             >
