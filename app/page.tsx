@@ -12,28 +12,30 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const mobileNavRef = useRef(null);
 
   // Handle mounting
   useEffect(() => {
-    setIsMounted(true);
+    setMounted(true);
+    return () => setMounted(false);
   }, []);
 
   // Add a cleanup effect for the mobile nav
   useEffect(() => {
     return () => {
-      // Cleanup code here if needed
-      setIsMenuOpen(false);
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
     };
-  }, []);
+  }, [isMenuOpen]);
 
   // Handle menu toggle safely
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
 
-  if (!isMounted) {
+  if (!mounted) {
     return null;
   }
 
@@ -62,15 +64,17 @@ export default function Page() {
         </button>
 
         {/* Mobile Navigation */}
-        <div 
-          ref={mobileNavRef}
-          className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}
-        >
-          <a href="#" className={styles.navLink}>work</a>
-          <a href="#" className={styles.navLink}>about</a>
-          <a href="#" className={styles.navLink}>contact</a>
-          <span style={{ color: '#ffbc42' }}>welcome</span>
-        </div>
+        {typeof window !== 'undefined' && (
+          <div 
+            ref={mobileNavRef}
+            className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}
+          >
+            <a href="#" className={styles.navLink}>work</a>
+            <a href="#" className={styles.navLink}>about</a>
+            <a href="#" className={styles.navLink}>contact</a>
+            <span style={{ color: '#ffbc42' }}>welcome</span>
+          </div>
+        )}
       </header>
 
       <main style={{ marginTop: '0', position: 'relative' }}>
@@ -82,8 +86,13 @@ export default function Page() {
         
         <div className={styles.columns}>
           <div className={styles.leftColumn}>
+            <h2 className={styles.sectionHeading}>About Me</h2>
             <p>
-              I&#39;m an AI optimist. I believe in using AI for good. I&#39;ve been prompting with AI for 3+ years. I&#39;m a neurodiverse autodidactic polymath. Spent 10+ years in finance and business strategy. I&#39;m Irish. I&#39;ve lived in Bangkok, Sydney and Osaka and now reside in Wales. I once got chased by a Komodo dragon. I&#39;ve 8 years of product experience at a tech start-up. And now I&#39;m teaching non-tech folks how to build cool stuff as an AI-native development instructor.
+            I&#39;m an AI optimist. I believe AI can do amazing things for good. I&#39;ve been prompting since 2022 and I&#39;ve spent 100s of hours figuring out how to get the best results. I&#39;m a neurodiverse autodidact. Which is just a fancy way of saying I love to teach myself cool stuff. <br />
+            <br />
+            Before this I spent 10+ years in finance and business strategy. I&#39;ve travelled and lived around the world, in Bangkok, Sydney and Osaka. I was born and raised in Ireland but now I call beautiful rural Wales home. Fun fact? I once got chased by a Komodo dragon. Not as fun at the time. <br /> 
+            <br />
+            I&#39;ve also got eight years of product experience at a tech start-up. These days, I&#39;m helping non-tech folks create amazing things as an AI x Coding instructor with the 100 School bootcamp. 
             </p>
           </div>
 

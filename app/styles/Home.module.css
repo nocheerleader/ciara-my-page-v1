@@ -43,7 +43,7 @@
   
   .leftColumn {
     width: 60%;
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.5;
   }
   
@@ -231,4 +231,13 @@
     .hamburger.active span:last-child {
       transform: rotate(-45deg);
     }
+  }
+  
+  .sectionHeading {
+    /* Add some space below the heading */
+    margin-bottom: 1rem;
+    /* Make the heading stand out */
+    font-weight: 500;
+    /* Match your design system's heading size */
+    font-size: 2rem;
   }
