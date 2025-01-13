@@ -44,9 +44,9 @@ export default function Page() {
         
         {/* Desktop Navigation */}
         <div className={styles.desktopNav}>
-          <a href="#" className={styles.navLink}>work</a>
+          <a href="#" className={styles.navLink}>prompting</a>
+          <a href="#" className={styles.navLink}>framework</a>
           <a href="#" className={styles.navLink}>about</a>
-          <a href="#" className={styles.navLink}>contact</a>
           <span style={{ color: '#ffbc42' }}>welcome</span>
         </div>
 
@@ -89,10 +89,10 @@ export default function Page() {
 
           <div className={styles.rightColumn}>
             <p>
-              I&#39;m passionate about making AI accessible to everyone. Especially non-technical beginners. 
+              I&#39;m passionate about making AI accessible to everyone. 
             </p>
-            <p style={{ marginTop: '1.5rem' }}>
-             v0 and Cursor beginners course coming January 2025 
+            <p style={{ marginTop: '0.5 rem' }}>
+             Build and deploy framework coming soon. 
             </p>
             <a 
               href="https://x.com/nocheerleader" 
